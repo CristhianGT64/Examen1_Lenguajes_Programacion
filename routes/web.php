@@ -32,3 +32,7 @@ Route::put('/guardarcambios/{id}', [tipoAsientoController::class,'guardarcambios
 
 //Vuelos
 Route::get('/vuelos', [vueloController::class,'vuelos'])->name('vuelos.index');
+Route::get('/crearVuelo', [vueloController::class,'crearvuelo'])->name('vuelo.crearvuelo');
+Route::post('/guardarvUELOo', [vueloController::class,'guardarVuelo'])->name('vuelo.guardarVuelo');
+
+

@@ -14,32 +14,33 @@
             <div class="col-md-6">
                 <h2>Crear Nuevo Vuelo</h2>
                 <br>
-                <form >
+                <form action="{{route('vuelo.guardarVuelo')}}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="color">Numero:</label>
-                        <input type="text" class="form-control" />
+                        <input name="numero" type="text" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label for="metros">Origen</label>
-                        <input type="text"class="form-control"/>
+                        <input name="origen" type="text"class="form-control"/>
                     </div>
                     <div class="form-group">
                         <label for="tipoPropiedad">Destino:</label>
-                        <input type="text" class="form-control"/>
+                        <input name="destino" type="text" class="form-control"/>
                     </div>
                     <div class="form-group">
                         <label for="tipoPropiedad">Fecha Vuelo:</label>
-                        <input type="date" class="form-control"/>
+                        <input name="fecha" type="date" class="form-control"/>
                     </div>
                     <div class="form-group">
-                        <label for="tipoPropiedad">Cantidad:</label>
-                        <input type="number" class="form-control"/>
+                        <label for="tipoPropiedad">Numero Asientos:</label>
+                        <input name="cantidad" type="number" class="form-control"/>
                     </div>
 
                     
                     <br>
                     <div class="form-group">
-                        <a class="btn btn-warning">Volver</a>
+                        <a href="{{route('vuelos.index')}}" class="btn btn-warning">Volver</a>
                         <button type="submit" class="btn btn-success">Guardar</button>
                     </div>
                 </form>

@@ -11,7 +11,7 @@
     <div class="container">
     <h1>Mantenimiento Vuelos</h1>
     <br>
-    <a class="btn btn-success">Agregar Nuevo</a>
+    <a href="{{route('vuelo.crearvuelo')}}" class="btn btn-success">Agregar Nuevo</a>
     <br>
     <table class="table">
         <thead>
@@ -25,24 +25,26 @@
         </thead>
         <tbody>
             
-                <tr>
-                    <td>CM385</td>
-                    <td>San Pedro Sula</td>
-                    <td>San Jose</td>
-                    <td>235</td>
-                    <td>
-                        <a>Editar</a>
-                    </td>
-                    <td>
-                        <a>Eliminar</a>
-                    </td>
-                    <td>
-                        <a>Agregar Asiento</a>
-                    </td>
-                    <td>
-                        <a>Ver Asientos</a>
-                    </td>
-                </tr>
+            @foreach ($vuelos as $vuelo)
+            <tr>
+                <td>{{$vuelo->numeroVuelo}}</td>
+                <td>{{$vuelo->origen}}</td>
+                <td>{{$vuelo->destino}}</td>
+                <td>{{$vuelo->numeroAsientos}}</td>
+                <td>
+                    <a>Editar</a>
+                </td>
+                <td>
+                    <a>Eliminar</a>
+                </td>
+                <td>
+                    <a>Agregar Asiento</a>
+                </td>
+                <td>
+                    <a>Ver Asientos</a>
+                </td>
+            </tr>
+            @endforeach
             
             
         </tbody>
